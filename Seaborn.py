@@ -1,0 +1,18 @@
+import seaborn as sns
+import matplotlib.pyplot as mlp
+print(sns.get_dataset_names())
+flights = sns.load_dataset('flights')
+attention = sns.load_dataset('attention')
+planets = sns.load_dataset('planets')
+dots = sns.load_dataset('dots')
+print(dots)
+sns.scatterplot(x ='coherence', y ='firing_rate', data = dots)
+mlp.show()
+sns.histplot(dots['coherence'],kde=True, bins=15)
+sns.barplot(x = 'mass', y = 'distance', data = planets )
+mlp.show()
+sns.jointplot(x = 'mass', y = 'distance', data = planets, kind ='kde',shade = True)
+mlp.show()
+sns.jointplot(x = 'mass', y = 'distance', data = planets, kind ='hex')
+mlp.show()
+sns.heatmap(planets.corr(), annot=True, cmap='icefire' or 'coolwarm')
